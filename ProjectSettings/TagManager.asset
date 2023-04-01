@@ -43,14 +43,14 @@ TagManager:
   - name: BackGround
     uniqueID: 2295460541
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Dekor
+    uniqueID: 2975222015
     locked: 0
   - name: EkDekor
     uniqueID: 3648009245
     locked: 0
-  - name: Dekor
-    uniqueID: 2975222015
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Terrian
     uniqueID: 1958531305
