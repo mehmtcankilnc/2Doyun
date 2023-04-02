@@ -7,6 +7,11 @@ public class MonsterMovement : MonoBehaviour
     public Transform[] points;
     public float speed;
     public int destinationPoint;
+    void Start(){
+        float scaleX = transform.localScale.x;
+        float scaleY = transform.localScale.y;
+        float scaleZ = transform.localScale.z;
+    }
     void FixedUpdate()
     {
         if(destinationPoint == 0){

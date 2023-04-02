@@ -39,5 +39,9 @@ public class PlayerHealth : MonoBehaviour
     void TakeDamage(int damage){
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        anim.SetBool("hurt",true);
+    }
+    private void normalAnim(){
+        anim.SetBool("hurt",false);
     }
 }
