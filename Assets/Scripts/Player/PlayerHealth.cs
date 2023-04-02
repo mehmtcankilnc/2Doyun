@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerLife : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
+    public int maxHealth = 5;
+    public int currentHealth;
+    public HealthBar healthBar;
     private Rigidbody2D rb;
     private Animator anim;
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
-
     private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy")){
+        if (collision.gameObject.CompareTag("Trap")){
             Die();
+        }
+        else if(collision.gameObject.CompareTag("Enemy")){
+            TakeDamage(1);
+            if(currentHealth <= 0){
+                Die();
+            }
         }
     }
     public void Die(){
@@ -25,5 +35,9 @@ public class PlayerLife : MonoBehaviour
     }
     private void RestartLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    void TakeDamage(int damage){
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }
