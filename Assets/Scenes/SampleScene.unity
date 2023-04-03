@@ -316,8 +316,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Carrots : 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9d6787961c837146ac165a90c0665ad, type: 2}
-  m_sharedMaterial: {fileID: 3183634616945440031, guid: e9d6787961c837146ac165a90c0665ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5a3493125c0a59947b496acd32c87e38, type: 2}
+  m_sharedMaterial: {fileID: 6612475387822567746, guid: 5a3493125c0a59947b496acd32c87e38, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -461,8 +461,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Gems : 0 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9d6787961c837146ac165a90c0665ad, type: 2}
-  m_sharedMaterial: {fileID: 3183634616945440031, guid: e9d6787961c837146ac165a90c0665ad, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5a3493125c0a59947b496acd32c87e38, type: 2}
+  m_sharedMaterial: {fileID: 6612475387822567746, guid: 5a3493125c0a59947b496acd32c87e38, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
