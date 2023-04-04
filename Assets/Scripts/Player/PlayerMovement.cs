@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private enum MovementState{ idle,running,jumping,falling}
     private SpriteRenderer sprite;
     [SerializeField]private float climbSpeed=5f;
+    [SerializeField]private AudioSource jumpSound;
+    [SerializeField]private AudioSource climbSound;
     
     // Start is called before the first frame update
     private void Start()
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity=new Vector2(dirX*moveSpeed,rb.velocity.y);
 
         if(Input.GetButtonDown("Jump") && IsGrounded()){
-            
+            jumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x,jumpForce);
         }
 
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (anim.GetBool("climbing"))
-        {
+        {   
             float verticalInput = Input.GetAxisRaw("Vertical");
             Vector2 climbVelocity = new Vector2(rb.velocity.x, verticalInput * climbSpeed);
             rb.velocity = climbVelocity;
@@ -75,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {   
         if (other.tag == "Ladder")
         {
+            climbSound.Play();
             anim.SetBool("climbing", true);
         }
     }
@@ -82,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
     {   
         if (other.tag == "Ladder")
         {
+            climbSound.Stop();
             anim.SetBool("climbing", false);
         }
     }
